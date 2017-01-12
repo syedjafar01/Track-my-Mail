@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track My Mail</title>
+    <link rel="stylesheet" href="stylesheets/displaypage.css">
+    <link rel="stylesheet" href="flaticon/flaticon.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <script>
+        function doprocess() {
+            var code = getParameterByName('code', window.location.href)
+            //alert(code);
+            //image loading
+            document.getElementById("loadingPage").style.display = "flex";
+
+
+            //call backend service using ajax
+            getemaildata(code);
+            setTimeout(stopload, 40000);
+
+        }
+
+        function getParameterByName(name, url) {
+             if (!url) {
+             url = window.location.href;
+             }
+             name = name.replace(/[\[\]]/g, "\\$&");
+             var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+             results = regex.exec(url);
+             if (!results) return null;
+             if (!results[2]) return '';
+             return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function getemaildata(code) {
+             var xhttp = new XMLHttpRequest();
+             xhttp.onreadystatechange = function() {
+                                                     if (this.readyState == 4 && this.status == 200) {
+                                                     var values = this.responseText;
+                                                     var res = values.split(";");
+                                                     document.getElementById("inboxcount").innerHTML = res[0];
+                                                     document.getElementById("repliedcount").innerHTML = res[1];
+                                                     document.getElementById("unreadcount").innerHTML = res[2];
+                                                     }
+                                                   };
+             xhttp.open("GET", "compute?code="+code, true);
+             xhttp.send();
+        }
+        function stopload() {
+             document.getElementById("loadingPage").style.display = "none";
+        }
+    </script>
+</head>
+<body onload="doprocess()">
+    <div class="layout__container">
+
+        <div class="page__loading " id="loadingPage">
+            <img src="images/loading.gif" class="page__loading__image" alt="">
+        </div>
+      
+       
+<!--   header starts  -->
+            <header class="header">
+                <h1 class="header__title">
+                    Track My Mail
+                </h1>
+            </header>
+<!--  header ends  -->
+            
+<!--section starts-->
+            <div class="section card-section">
+                <div class="section__element">
+                    <div class="section__element__icon flaticon-inbox"></div>
+                    <div class="section__element__text">
+                        INBOX
+                    </div>
+                    <div id = "inboxcount"class="section__element__count">
+                        0
+                    </div>
+                </div>
+                <div class="section__element ">
+                       <div class="section__element__icon flaticon-unread"></div>
+                    <div class="section__element__text">NOT REPLIED</div>
+                    <div></div>
+                    <div id="unreadcount" class="section__element__count">0</div>
+                </div>
+                <div class="section__element ">
+                       <div class="section__element__icon flaticon-replied" ></div>
+                    <div class="section__element__text">REPLIED</div>
+                    <div id="repliedcount" class="section__element__count">0</div>
+                </div>
+                 
+
+           
+            </div>
+<!--  section ends-->
+             <a href="http://localhost:8080/refresh" class="section__logout__button">Logout</a>
+        </div>
+   
+</body>
+</html>
+
+                
+               

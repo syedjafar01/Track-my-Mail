@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track My mail</title>
+    <link rel="stylesheet" href="stylesheets/displaypage.css">
+    <link rel="stylesheet" href="flaticon/flaticon.css">
+</head>
+<body>
+    <div class="layout__container">
+      
+       
+<!--   header starts  -->
+            <header class="header">
+                <h1 class="header__title">
+                    Track My Mail
+                </h1>
+            </header>
+<!--  header ends  -->
+            
+<!--section starts-->
+            <div class="section login__form">
+               
+<!--  form starts-->
+         
+                    
+                <form name="loginform" action="nextpage" method="get" class="section__form" onsubmit="return validateForm();">
+                    <div class="section__form__username">
+                         
+                            
+                        <input type="text" class="section__form__username__value" maxlength="30" name="username"/>
+                      <div class="section__form__username__placeholder flaticon-user"><span class="section__form__username__placeholder__text">Username</span></div>
+                          <hr class="section__form__bottomline"/>  
+                           
+                      
+                    </div>
+                    
+                    <div class="section__form__password">
+                        
+                           <input type="password" class="section__form__password__value" maxlength="20" name="password"/>
+                       <div class="section__form__password__placeholder flaticon-password"><span class="section__form__password__placeholder__text">Password</span></div>
+                        <hr class="section__form__bottomline"/>  
+                    </div>
+                     <div class="section__login__alert flaticon-alert">
+                  <span class="section__login__alert__text "> Invalid Userid/Password  
+                </span>   </div> 
+                     <input type="submit" class="section__submit__button" value="Login">
+                </form>
+                
+<!--              form ends-->
+                
+
+            </div>
+            
+<!--  section ends-->
+        </div>
+    <script type="text/javascript">
+console.log("Hello");
+function validateForm() {
+        var un = document.loginform.username.value;
+        var pw = document.loginform.password.value;
+        var user = "admin";
+        var pass = "admin";
+        if ((un == user) && (pw == pass)) {
+            return true;
+        }
+        else {
+            alert ("Login was unsuccessful, please check your username and password");
+            return false;
+        }
+  }
+
+</script>
+</body>
+</html>
+
+                
+               

@@ -1,0 +1,491 @@
+/* CSS reset begins */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/*CSS reset ends*/
+
+
+/*General classes starts*/
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
+.bold {
+    font-weight: 800
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*General classes sends*/
+
+
+/*body class starts  */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    background: url(../images/bg.png);
+    background-size: 100% 100%;
+}
+.body--gmail-login{
+ background: url(../images/bg.png);
+
+}
+
+/*body class ends  */
+
+
+/*flexbox class starts*/
+
+.layout__container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+/*flexbox class ends*/
+
+
+/*header class starts*/
+.page__loading{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    right:0px;
+    background: rgba(155,54,56,0.9);
+    z-index: 1;
+}
+.page__loading__image
+{
+    width:100px;
+    height: 100px;
+}.header {
+    position: absolute;
+    left: 2%;
+    top: 3%;
+}
+
+.header__title {
+    display: block;
+    font-size: 4vw;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    word-spacing: 0.08em;
+    font-weight: 600;
+}
+
+
+/*header class ends*/
+
+
+/*section class starts*/
+
+
+/*
+.section
+{
+    position: absolute;
+    right:21%;
+    top:30%;
+    color: white;
+    width:300px;
+    display: flex;
+}
+*/
+
+
+/*section class starts*/
+
+.section {
+    position: absolute;
+    right: 30px;
+    top: 25%;
+    color: white;
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section.login__form {
+    right: 21%;
+    top: 30%;
+    width: 300px;
+}
+
+.section.card-section {
+    top: 0;
+    bottom: 0;
+    right: 40px;
+    left: 36%;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section__logout__button {
+    background-color: rgb(56, 56, 56);
+    height: 40px;
+    font-size: 16px;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 9px 28px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.section__element {
+    width: 160px;
+    height: 240px;
+    background: #383838;
+    border-radius: 4px;
+    padding: 23px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.section__element__icon {
+    /*    height:20%;*/
+}
+
+.section__element__text {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.section__element__text:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: calc(100% - 15px);
+    margin: auto;
+    background: #4e4e4e;
+    margin-top: 12px;
+    visibility: hidden;
+}
+
+.section__element__count {
+    font-size: 52px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: 100;
+}
+
+.section__element__icon.flaticon-inbox:before,
+.section__element__icon.flaticon-unread:before,
+.section__element__icon.flaticon-replied:before {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    margin-left: 0px;
+}
+
+.section__form__username,
+.section__form__password {
+    display: block;
+    height: 50px;
+    width: 300px;
+    position: relative;
+}
+
+.section__form__username__value,
+.section__form__password__value {
+    display: block;
+    height: 50px;
+    width: 300px;
+    font-weight: 100;
+    padding-left: 5px;
+    padding-top: 24px;
+    position: relative;
+    z-index: 99;
+    background: transparent;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section__form__username__placeholder,
+.section__form__password__placeholder {
+    position: absolute;
+    top: 26px;
+}
+
+.section__form__username__value:focus + .section__form__username__placeholder,
+.section__form__password__value:focus + .section__form__password__placeholder {
+    position: absolute;
+    top: 5px;
+    transition: all ease 0.5s;
+    transform: scale(0.75, 0.75);
+    margin-left: -12px;
+}
+
+.section__form__username__value:not(:focus) + .section__form__username__placeholder,
+.section__form__password__value:not(:focus) + .section__form__password__placeholder {
+    transition: all ease 0.5s;
+}
+
+input:focus {
+    outline-style: none;
+}
+
+.section__form__password {
+    margin-bottom: 0px;
+}
+
+.section__submit__button {
+    display: block;
+    background-color: #9b3638;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    color: #efefef;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.section__login__alert {
+    display: block;
+    width: 300px;
+    font-size: 12px;
+    color: #d03b3b;
+    height: 25px;
+    visibility: hidden;
+}
+
+.section__form__username__placeholder,
+.section__form__password__placeholder {
+    font-size: 14px;
+}
+
+.section__form__username__placeholder__text,
+.section__form__password__placeholder__text {
+    margin-left: 5px;
+}
+
+.section__login__alert__text {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 11px;
+}
+
+.section__form__bottomline {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 49px;
+    width: 102px;
+    border: none;
+    transform: scale(0, 1);
+    transition: all ease 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    z-index: 99;
+}
+
+.gmail-page__container{
+    background:  url(../images/google-wallpaper.jpg);
+
+    width: 100%;
+    height: 100%;
+    background-size:100% 100%;
+
+}
+
+
+.gmail-page-paragraph{
+    margin: auto;
+    display: block;
+    max-height: 500px;
+    width: 70%;
+    padding-top: 50px;
+    line-height: 35px;
+    text-align: justify;
+    font-size:20px;
+    overflow: hidden;
+      color: #f3c33e;
+
+}
+.gmail-page-paragraph--bold{
+    font-weight: 600;
+    color: white;
+}
+.gmail-login-button{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background:#2196f3;
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+.section__form__username__value:focus ~ .section__form__bottomline,
+.section__form__password__value:focus ~ .section__form__bottomline {
+    transform: scale(3, 1);
+    transform-origin: center;
+}
+
+.section__login__alert.flaticon-alert:before {
+    font-size: 12px;
+    margin-left: 14px;
+}
+
+.section__form__password__placeholder.flaticon-password:before {
+    font-size: 14px;
+    margin-left: 13px;
+}
+
+.section__form__username__placeholder.flaticon-user:before {
+    font-size: 14px;
+    margin-left: 13px;
+}
+
+@media only screen and (max-width:768px) {
+    .layout__container {
+        background: #2e2e32;
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        background: #2e2e32;
+    }
+    .header {
+        position: static;
+        margin: auto;
+    }
+    .header__title {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .header__title.display__responsive__title {
+        text-align: left;
+        margin-left: 10px;
+    }
+    .section {
+        position: static;
+        margin: auto;
+        margin-top: 30vh;
+    }
+    .card-section {
+        flex-flow: column;
+        margin-top: 20vh;
+        left: 10%;
+        right: 10%;
+    }
+    .section__element {
+        display: flex;
+        height: auto;
+        flex-flow: row;
+        margin-bottom: 20px;
+        padding: 10px 0px;
+        align-content: center;
+        width: 70vw;
+        justify-content: space-around;
+    }
+    .section__element__icon.flaticon-inbox:before,
+    .section__element__icon.flaticon-unread:before,
+    .section__element__icon.flaticon-replied:before .section__element__icon {
+        padding-top: 10px;
+    }
+    .section__element__icon {
+        width: 33%;
+    }
+    .section__element__text {
+        width: 23%;
+        padding-top: 25px;
+        font-size: 18px;
+        position: relative;
+    }
+    .section__element__text:after {
+        content: '';
+        display: block;
+        height: 95%;
+        width: 1px;
+        background: rgba(148, 148, 148, 0.73);
+        position: absolute;
+        right: -22%;
+        top: -12%;
+        visibility: visible;
+    }
+    .section__element__count {
+        padding-top: 0px;
+        width: 43%;
+    }
+    .section__logout__button {
+        top: 8px;
+        width: auto;
+        right: 10px;
+        left: auto;
+        background: #d03b3b;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .header__title {
+        font-size: 37px;
+    }
+    .header__title.display__responsive__title {
+        font-size: 7vw;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .section__element {
+        width: 300px;
+        flex-shrink: 0;
+    }
+    .section__element__text {
+        font-size: 17px;
+    }
+}
